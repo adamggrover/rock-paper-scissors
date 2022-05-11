@@ -13,14 +13,20 @@
     //computer takes a turn
     //random rock paper scissors choice
     function computerPlay(){
-        let computerChoice = items[Math.floor(Math.random()*items.length)];
+        let computerSelection = items[Math.floor(Math.random()*items.length)];
         return computerChoice;   
         
     }  
-      
+
     //human takes a turn (case-insensitive)
     //get input from user
+    function userPlay() {
+        let userSelection = window.prompt("Make your selection (rock/paper/scissors)");
+        return userSelection.toLowerCase();
+    }
     //round of game
+
+    
     //take computer choice and human choice, compare and work out who wins
     //return message about who wins
     </script>
