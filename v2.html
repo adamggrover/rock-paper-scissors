@@ -16,66 +16,57 @@
     let userScore=0;
     let computerScore=0;
 
+    
 
-    function computerPlay(){
-     
-    return items[Math.floor(Math.random()*items.length)];   
-    }  
 
-    function userPlay() {
-        let userSelection = window.prompt("Make your selection (rock/paper/scissors)");
-        return userSelection.toLowerCase();
-    }
+    
+
+    
 
 
     function playRound(computerSelection, userSelection){ 
 
+        
+
         if (computerSelection == 'rock' && userSelection == 'paper'){
-            userScore+=1;
-            
-            
-            
-            
-            
-            return ('You win the round! Paper beats rock')
-            
-            
-            
+            userScore+=1;        
+            return (`You win the round! ${userSelection} beats ${computerSelection}`);        
+                     
             
             
         }
         else if (computerSelection == 'rock' && userSelection == 'scissors'){
             computerScore+=1;
-            return ('You lose the round! Rock beats scissors');
+            return (`You lose the round! ${computerSelection} beats ${userSelection}`);
             
            
         }
         else if (computerSelection == 'paper' && userSelection == 'scissors'){
             userScore+=1;
-            return ('You win the round! Scissors beats paper');
+            return (`You win the round! ${userSelection} beats ${computerSelection}`);
             
             
         }
         else if (computerSelection == 'paper' && userSelection == 'rock'){
             computerScore+=1;;
-            return ('You lose the round! Scissors beats paper');
+            return (`You lose the round! ${computerSelection} beats ${userSelection}`);
             
             
         }
         else if (computerSelection == 'scissors' && userSelection == 'rock'){
             userScore+=1;
-            return ('You win the round! Rock beats scissors');
+            return (`You win the round! ${userSelection} beats ${computerSelection}`);
             
             
         }
         else if (computerSelection == 'scissors' && userSelection == 'paper'){
             computerScore+=1;
-            return ('You lose the round! Scissors beats paper');
+            return (`You lose the round! ${computerSelection} beats ${userSelection}`);
             
             
         }
         else {
-            return ('Tie round. You made the same choice');
+            return (`Tie round. You both chose ${userSelection}`);
 
            
         }   
@@ -92,15 +83,33 @@
         userScore=0;
         computerScore=0;
 
-       
+        
+
+        function computerPlay(){
+     
+        return items[Math.floor(Math.random()*items.length)];   
+        }  
+
+        
        
 
         for (i=0; i<5; i++){
 
-            computerPlay();
+        const userSelection = userPlay();
+        const computerSelection = computerPlay();
+
+        function userPlay() {
+        let userChoice = window.prompt("Make your selection (rock/paper/scissors)");
+        return userChoice.toLowerCase();
+        
+        }
+
             
-            const userSelection = userPlay();
-            const computerSelection = computerPlay();
+            
+
+            
+            
+            
 
         
         
@@ -122,7 +131,7 @@
         
 
         if (userScore > computerScore){
-            return (`Congratulations! you won the game ${userScore} rounds to ${computerScore}`);
+            return (`Congratulations! You won the game ${userScore} rounds to ${computerScore}`);
         }
         else{
             return (`You lost the game ${computerScore} rounds to ${userScore}`);
