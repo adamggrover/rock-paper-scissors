@@ -22,6 +22,12 @@
     return items[Math.floor(Math.random()*items.length)];   
     }  
 
+    function userPlay() {
+        let userSelection = window.prompt("Make your selection (rock/paper/scissors)");
+        return userSelection.toLowerCase();
+    }
+
+
     function playRound(computerSelection, userSelection){ 
 
         if (computerSelection == 'rock' && userSelection == 'paper'){
@@ -85,14 +91,19 @@
 
         userScore=0;
         computerScore=0;
-        
+
+       
        
 
         for (i=0; i<5; i++){
 
             computerPlay();
-            const userSelection = "rock";
+            
+            const userSelection = userPlay();
             const computerSelection = computerPlay();
+
+        
+        
 
             
 
@@ -119,10 +130,10 @@
         }
 
 
-    }
+    
 
    
-
+    }
     console.log(game());
    
 
