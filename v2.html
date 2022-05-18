@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+    const items = ['rock', 'paper', 'scissors'];
+
+    let userScore=0;
+    let computerScore=0;
+
+
+    function computerPlay(){
+     
+    return items[Math.floor(Math.random()*items.length)];   
+    }  
+
+    function playRound(computerSelection, userSelection){ 
+
+        if (computerSelection == 'rock' && userSelection == 'paper'){
+            userScore+=1;
+            
+            
+            
+            
+            
+            return ('You win the round! Paper beats rock')
+            
+            
+            
+            
+            
+        }
+        else if (computerSelection == 'rock' && userSelection == 'scissors'){
+            computerScore+=1;
+            return ('You lose the round! Rock beats scissors');
+            
+           
+        }
+        else if (computerSelection == 'paper' && userSelection == 'scissors'){
+            userScore+=1;
+            return ('You win the round! Scissors beats paper');
+            
+            
+        }
+        else if (computerSelection == 'paper' && userSelection == 'rock'){
+            computerScore+=1;;
+            return ('You lose the round! Scissors beats paper');
+            
+            
+        }
+        else if (computerSelection == 'scissors' && userSelection == 'rock'){
+            userScore+=1;
+            return ('You win the round! Rock beats scissors');
+            
+            
+        }
+        else if (computerSelection == 'scissors' && userSelection == 'paper'){
+            computerScore+=1;
+            return ('You lose the round! Scissors beats paper');
+            
+            
+        }
+        else {
+            return ('Tie round. You made the same choice');
+
+           
+        }   
+
+
+    }
+
+    
+    
+
+
+    function game(){
+
+        userScore=0;
+        computerScore=0;
+        
+       
+
+        for (i=0; i<5; i++){
+
+            computerPlay();
+            const userSelection = "rock";
+            const computerSelection = computerPlay();
+
+            
+
+            console.log(playRound(computerSelection,userSelection));
+            console.log(`${userScore}:${computerScore}`);
+            
+            
+            
+            
+
+            
+            
+
+        }
+
+        
+
+        if (userScore > computerScore){
+            return (`Congratulations! you won the game ${userScore} rounds to ${computerScore}`);
+        }
+        else{
+            return (`You lost the game ${computerScore} rounds to ${userScore}`);
+            
+        }
+
+
+    }
+
+   
+
+    console.log(game());
+   
+
+    
+  
+
+    
+
+
+
+
+    </script>
+    
+</body>
+</html>
